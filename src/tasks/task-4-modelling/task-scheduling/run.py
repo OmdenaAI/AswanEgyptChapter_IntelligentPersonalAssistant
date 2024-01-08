@@ -17,10 +17,11 @@ def task_scheduling(username: str,
                       project_name : str, 
                       days: list,
                       day_period: str ,
-                      recurring_tasks : str ,
+                      recurring_tasks :  bool ,
                       num_sessions : int ,
                       session : str ,
-                      duration: str ):
+                      duration: str,
+                                    ):
 
     user_schema = connection_with_user_db(username , schema )
 
@@ -52,6 +53,17 @@ def task_scheduling(username: str,
 
     save_changes_to_db(username , user_schema)
     
+
+task_scheduling("",
+                      "" ,
+                      "medical consultation", 
+                      ["Monday", "Thursday"],
+                      "afternoon" ,
+                      True ,
+                      3 ,
+                      "session" ,
+                      "30 minutes"
+                                    )
     
 
 
