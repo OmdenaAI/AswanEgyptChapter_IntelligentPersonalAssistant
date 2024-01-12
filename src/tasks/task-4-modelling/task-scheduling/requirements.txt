@@ -1,0 +1,6 @@
+selenium == 4.16.0
+openai == 1.7.2
+huggingface-hub == 0.20.2
+langchain == 0.1.0
+
+
