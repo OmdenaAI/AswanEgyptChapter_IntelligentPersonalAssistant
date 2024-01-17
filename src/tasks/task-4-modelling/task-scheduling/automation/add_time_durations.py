@@ -23,3 +23,4 @@ def add_time_durations(time_str1, time_str2):
     result_str = f'{total_hours:.1f} hours'
 
     return result_str
+
