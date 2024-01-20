@@ -4,7 +4,7 @@ from LLM_inference import llm_inference
 from example_prompts import example_prompt_list
 from prefix_prompts import prefix_list
 from suffix_prompts import suffix_list
-from creating_vector_db.task_scheduling_vector_db import get_collection_from_vector_db
+from vector_db.task_scheduling_vector_db import get_collection_from_vector_db
 import re
 import ast  
 from extract_first_list import extract_first_list
@@ -14,7 +14,7 @@ from extract_first_integer import extract_first_integer
 
 def extract_features(input):
     examples = []
-    collections = get_collection_from_vector_db("creating_vector_db/vector_db", "task_scheduling")
+    collections = get_collection_from_vector_db("vector_db/vector_db", "task_scheduling")
 
 
 
