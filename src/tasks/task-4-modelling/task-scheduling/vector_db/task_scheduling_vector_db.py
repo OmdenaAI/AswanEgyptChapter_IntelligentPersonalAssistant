@@ -40,7 +40,7 @@ def create_task_scheduling_vector_db(vdb_path: str,collection_name:str , df: pd.
     
     # the metadata
     task_scheduling_metadata = [
-        {"job": row.job , "sessions": row.sessions, "a day": row.a_day, "duration": row.duration, "days":row.days, "time":row.time} 
+        {"job": row.job , "sessions": row.sessions, "a day": row.a_day, "duration": row.duration, "days":row.days, "time":row.time, "task name": row.name} 
         for row in df.itertuples()
     ]
     
