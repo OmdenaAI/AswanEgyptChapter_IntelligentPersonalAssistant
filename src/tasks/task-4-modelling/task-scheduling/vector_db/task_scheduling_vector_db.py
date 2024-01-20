@@ -29,7 +29,7 @@ def create_task_scheduling_vector_db(vdb_path: str,collection_name:str , df: pd.
     )
 
     #creating the collection
-    q_collection = chroma_client.create_collection(
+    collection = chroma_client.create_collection(
         name=collection_name,
         embedding_function=embedding_function,
     )
@@ -56,10 +56,10 @@ def create_task_scheduling_vector_db(vdb_path: str,collection_name:str , df: pd.
     # start adding the the vectors
     for i in range(num_iteration):
         if i == num_iteration - 1 :
-            q_collection.add(documents=task_scheduling_documents[start:], metadatas=task_scheduling_metadata[start:], ids=q_ids[start:])
+            collection.add(documents=task_scheduling_documents[start:], metadatas=task_scheduling_metadata[start:], ids=q_ids[start:])
         else:    
             end = start + 166
-            q_collection.add(documents=task_scheduling_documents[start:end], metadatas=task_scheduling_metadata[start:end], ids=q_ids[start:end])
+            collection.add(documents=task_scheduling_documents[start:end], metadatas=task_scheduling_metadata[start:end], ids=q_ids[start:end])
             start = end
     return None
 
