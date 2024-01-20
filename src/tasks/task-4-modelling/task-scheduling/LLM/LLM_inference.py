@@ -3,6 +3,7 @@ from langchain.llms import HuggingFaceHub, OpenAI
 from langchain.chains import LLMChain
 import warnings
 from typing import List
+import os
 
 
 warnings.filterwarnings("ignore")
@@ -55,7 +56,7 @@ def llm_inference(
 
         
         return llm_chain.run(
-            #input_variables here
+            input = input_variables_list[0]
 
             )
         
@@ -64,13 +65,13 @@ def llm_inference(
         # https://python.langchain.com/docs/integrations/llms/huggingface_hub
         llm = HuggingFaceHub(
             repo_id=hf_repo_id,
-            model_kwargs={"temperature": temperature, "max_length": max_length} )
+            model_kwargs={"temperature": temperature, "max_length": max_length})
         llm_chain = LLMChain(prompt=few_shot_prompt, llm=llm)
 
         return llm_chain.run(
-            #input variables here
+                    input = input_variables_list[0]
 
-            )
+                    )
         
 
     else:

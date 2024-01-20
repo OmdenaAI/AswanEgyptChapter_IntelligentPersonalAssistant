@@ -12,7 +12,7 @@ days_suffix_prompt = """
 
     """
 time_suffix_prompt = """
-        input : {input} .\
+        the input : {input} .\
         the time :
 
 
@@ -36,3 +36,5 @@ number_of_sessions_suffix_prompt =  """
 
 
           """
+          
+suffix_list = [number_of_sessions_suffix_prompt, recurring_task_suffix_prompt, duration_suffix_prompt, time_suffix_prompt, days_suffix_prompt, task_name_suffix_prompt]

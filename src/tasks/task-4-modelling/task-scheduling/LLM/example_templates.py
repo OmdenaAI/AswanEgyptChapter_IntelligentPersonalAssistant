@@ -41,6 +41,8 @@ number_of_sessions_example_template = """
           sessions: {sessions}. \
 
          """
+         
+example_template_list = [number_of_sessions_example_template, recurring_task_example_template, duration_example_template, time_example_template, days_example_template, task_name_example_template]
 
 
 

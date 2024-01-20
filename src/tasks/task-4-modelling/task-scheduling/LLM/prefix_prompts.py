@@ -30,7 +30,7 @@ recurring_task_prefix_prompt =  """
                          and you are specialized in task scheduling .\
                         you are tasked to know if the task is repeating across the day .\
                         you will extract the repeated task from the input.\
-                        the  extracted value must be boolean value which is True or False.\
+                        the  extracted value must only be boolean value which is True or False.\
 
 
                 """
@@ -48,3 +48,5 @@ number_of_sessions_prefix_prompt = """
                         the output which is number of sessions must be only an integer like 1 and 20 .\                       
                          
                 """
+                
+prefix_list = [number_of_sessions_prefix_prompt, recurring_task_prefix_prompt, duration_prefix_prompt,time_prefix_prompt, days_prefix_prompt, task_name_prefix_prompt] 
