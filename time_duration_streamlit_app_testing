@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+import streamlit as st
+
+# Define the add_time_durations function
+def add_time_durations(time_str1, time_str2):
+    def convert_to_minutes(time_str):
+        value, unit = time_str.split()
+        if unit == "hours" or unit == "hour":
+            return int(value) * 60
+        elif unit == "minutes" or unit == "minute":
+            return int(value)
+        else:
+            raise ValueError(f"Unsupported time unit: {unit}")
+
+    minutes1 = convert_to_minutes(time_str1)
+    minutes2 = convert_to_minutes(time_str2)
+
+    total_minutes = minutes1 + minutes2
+    total_hours = total_minutes / 60
+    result_str = f'{total_hours:.1f} hours'
+
+    return result_str
+
+# Streamlit app code
+def main():
+    st.title("Time Duration Calculator")
+
+    time_str1 = st.text_input("Enter time duration in Hour(s)")
+    time_str2 = st.text_input("Enter time duration in minute(s)")
+
+    if st.button("Calculate"):
+        try:
+            result = add_time_durations(time_str1, time_str2)
+            st.success(f"The total time duration is: {result}")
+        except ValueError as e:
+            st.error(str(e))
+
+if __name__ == "__main__":
+    main()
+
+
+# In[ ]:
+
+
